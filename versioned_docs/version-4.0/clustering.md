@@ -263,7 +263,7 @@ With Erlang versions starting with 20.2, the cookie file locations are:
 
  * `%HOMEDRIVE%%HOMEPATH%\.erlang.cookie` (usually `C:\Users\%USERNAME%\.erlang.cookie` for user `%USERNAME%`) if both the `HOMEDRIVE` and `HOMEPATH` environment variables are set
  * `%USERPROFILE%\.erlang.cookie` (usually `C:\Users\%USERNAME%\.erlang.cookie`) if `HOMEDRIVE` and `HOMEPATH` are not both set
- * For the RabbitMQ Windows service - `%USERPROFILE%\.erlang.cookie` (usually `C:\WINDOWS\system32\config\systemprofile`)
+ * For the RabbitMQ Windows service - `%USERPROFILE%\.erlang.cookie` (usually `C:\WINDOWS\system32\config\systemprofile`); if a Service Account (SA) is used to run the Windows service, the Erlang cookie is placed in the SA's homepath (usually `C:\Users\[Service Account]\.erlang.cookie`)
 
 If the Windows service is used, the cookie should be copied from
 `C:\Windows\system32\config\systemprofile\.erlang.cookie` to the expected
